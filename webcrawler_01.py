@@ -24,7 +24,7 @@ for cell_1 in name_col :            #값이 tuple이라 과정이 2번 필요
 drama_episode_list = []
 
 # 50개씩 나누어 크롤링 진행
-crawling_size = 50
+crawling_size = 10
 for i in range(0, len(drama_names), crawling_size):
     batch_drama_names = drama_names[i : i+crawling_size]
 
@@ -48,7 +48,7 @@ for i in range(0, len(drama_names), crawling_size):
             drama_episode_2 = 'fail'  # 검색에 실패할 경우 fail값을 입력
             drama_episode_list.append(drama_episode_2)
 
-    time.sleep(10)  # 간격10초 설정
+    time.sleep(5)  # 간격10초 설정
 
 #-----------------------------------------------------------#
 ##drama_episode_list에 있는 회차수를 엑셀에 저장
