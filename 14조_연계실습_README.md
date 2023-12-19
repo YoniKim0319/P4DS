@@ -89,24 +89,24 @@
 2. __디벨롭 계획__
 
     * 데이터 수집
-      1) webcrawler_01: 회차수 크롤링 => drama_02.xlsx 저장 (episode)
-      2) webcrawler_02: 줄거리를 크롤링 => drama_02.xlsx 저장 (summary)
+      - webcrawler_01: 회차수 크롤링 => drama_02.xlsx 저장 (episode)
+      - webcrawler_02: 줄거리를 크롤링 => drama_02.xlsx 저장 (summary)
          
     * 데이터 전처리
-      1) episode, summmary 부분 fail값 원인 분석 -> 드라마 이름 오타 => 오타 수정
-      2) summary의 fail 값 우선 수동 기입 -> 검색해도 안 나올 경우 fail 값 유지
+      - episode, summmary 부분 fail값 원인 분석 -> 드라마 이름 오타 => 오타 수정
+      - summary의 fail 값 우선 수동 기입 -> 검색해도 안 나올 경우 fail 값 유지
       
-      3) data_processing: episode와 summary 둘 다 fail인 경우 행 삭제 => drama_processing.xlsx 저장
-      4) episode의 fail 값 수동 기입 => drama_complete.xlsx 저장
+      - data_processing: episode와 summary 둘 다 fail인 경우 행 삭제 => drama_processing.xlsx 저장
+      - episode의 fail 값 수동 기입 => drama_complete.xlsx 저장
          
     * 데이터 시각화
-      wordcloud: 줄거리 기반 형태소 분석 -> 워드클라우드 진행 => drama_complete.xlsx 저장
+      - wordcloud: 줄거리 기반 형태소 분석 -> 워드클라우드 진행 => drama_complete.xlsx 저장
       
     * 데이터 분석
-      초기 분석: 워드클라우드로 시각화하여 빈도수를 파악하고자 함
+      - 초기 분석: 워드클라우드로 시각화하여 빈도수를 파악하고자 함
 
     * github 관련
-      webcrawler_02의 경우, main브랜치와 연결이 되지 않는 문제 발생 => 강제 병합 후 머지
+      - webcrawler_02의 경우, main브랜치와 연결이 되지 않는 문제 발생 => 강제 병합 후 머지
 
 3. __결과물__
     * 데이터 수집 : 크롤링을 통해 수집한 새로운 데이터 + 기존 데이터 => drama_02.xlsx
