@@ -140,6 +140,10 @@
     * 실행방식: drama_01 파일, 크롬드라이버 다운 후, webcrawler_01, webcrawler_02 실행 -> data_processing_01, data_processing_02 파일 실행 -> wordcloud 파일 실행
     * 단발적으로 진행되는 작업들이 많아, 함수화 대신 반복문으로 간단하게 표현해주었다.
 
+3. __최종결과물__
+   * 최종 데이터셋
+   * 워드클라우드
+
 <br>
 
 
