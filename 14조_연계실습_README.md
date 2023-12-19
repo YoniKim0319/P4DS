@@ -142,7 +142,8 @@
 
 3. __최종결과물__
    * 최종 데이터셋
-     https://github.com/YoniKim0319/P4DS/issues/5#issue-2048170374
+     ![KakaoTalk_20231219_173042535](https://github.com/YoniKim0319/P4DS/assets/129754535/85ede64f-8860-444e-8ebd-eb5473ad648b)
+
    * 워드클라우드
 
 <br>
