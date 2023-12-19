@@ -1,7 +1,5 @@
 from openpyxl import load_workbook
 from konlpy.tag import Okt
-# from wordcloud import WordCloud
-# import matplotlib.pyplot as plt
 from matplotlib import font_manager as fm
 
 # 엑셀 파일에서 데이터 읽어오기
@@ -44,19 +42,9 @@ for row_num, row in enumerate(read_sheet.iter_rows(min_row=2, max_row=1128, min_
 
     # 리스트에 추가
     text_for_wordcloud_list.append(text_for_wordcloud)
-'''
-    # wordcloud 생성
-    wordcloud = WordCloud(
-        font_path=font_path,
-        background_color='white',
-        width=800,
-        height=400,
-        max_words=100,  # 필요에 따라 조절
-    ).generate(text_for_wordcloud)
-'''
+
 print(text_for_wordcloud_list)
 
-'''
 import openpyxl
 
 # 엑셀 파일 생성 또는 열기
@@ -70,17 +58,8 @@ sheet = workbook['Sheet1']
 
 # 데이터를 G열의 2행부터 순차적으로 쓰기
 column_G = sheet['G']
-for i, value in enumerate(data_list, start=2):
+for i, value in enumerate(text_for_wordcloud_list, start=2):
     column_G[i - 1].value = value
 
 # 엑셀 파일 저장
 workbook.save(excel_file_path)
-'''
-'''
-    # 시각화
-    plt.figure(figsize=(10, 5))
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis('off')
-    plt.title(f'WordCloud for Row {row_num}')
-    plt.show()
-'''
