@@ -149,6 +149,7 @@
      ![KakaoTalk_20231219_173042535](https://github.com/YoniKim0319/P4DS/assets/129754535/85ede64f-8860-444e-8ebd-eb5473ad648b)
 
    * 워드클라우드
+     ![KakaoTalk_20231219_174344523](https://github.com/YoniKim0319/P4DS/assets/129754535/eec4b58a-e9fe-4c64-aa70-f66fd2582a3e)
 
 <br>
 
