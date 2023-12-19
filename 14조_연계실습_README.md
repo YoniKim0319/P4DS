@@ -85,7 +85,7 @@
     * 데이터 전처리
       1) episode, summmary 부분 fail값 원인 분석 -> 드라마 이름 오타 => 오타 수정
       2) summary의 fail 값 우선 수동 기입 -> 검색해도 안 나올 경우 fail 값 유지
-      ------------------------------------------------------------------------
+      ---
       3) data_processing: episode와 summary 둘 다 fail인 경우 행 삭제 => drama_processing.xlsx 저장
       4) episode의 fail 값 수동 기입 => drama_complete.xlsx 저장
          
