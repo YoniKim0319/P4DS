@@ -5,7 +5,7 @@ file_path = "./drama_02.xlsx"
 drama_data_df = pd.read_excel(file_path, header=1)
 print(drama_data_df)
 
-# 두 개의 열에 대해 'fail' 값을 가진 행 삭제
+# 두 개의 열에 대해 'fail' 값을 가진 행 삭
 drama_data_df = drama_data_df[~((drama_data_df['drama_episode'] == 'fail')
                                 & (drama_data_df['drama_summary'] == 'fail'))]
 
