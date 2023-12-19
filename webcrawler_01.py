@@ -1,4 +1,3 @@
-
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from openpyxl import load_workbook
@@ -9,7 +8,7 @@ browser = webdriver.Chrome("./chromedriver")
 #-----------------------------------------------------------#
 ##드라마 제목 엑셀에서 리스트 형태로 불러오기
 
-drama_data = 'C:\\Users\\82104\\PycharmProjects\\pythonProject\\capstone_drama_01.xlsx'
+drama_data = './drama_02.xlsx'
 read_xlsx = load_workbook(drama_data)
 read_sheet = read_xlsx.active
 name_col = read_sheet['D3:D1131'] #D3:D1131
@@ -29,6 +28,7 @@ crawling_size = 10
 for i in range(0, len(drama_names), crawling_size):
     batch_drama_names = drama_names[i : i+crawling_size]
 
+    # 50개씩 끊은 batch_drama_names에서 하나씩 불러와서 검색
     for drama_search in batch_drama_names:
 
         browser.get(f"https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%ED%95%9C%EA%B5%AD%EB%93%9C%EB%9D%BC%EB%A7%88+{drama_search}")
@@ -49,7 +49,7 @@ for i in range(0, len(drama_names), crawling_size):
             drama_episode_2 = 'fail'  # 검색에 실패할 경우 fail값을 입력
             drama_episode_list.append(drama_episode_2)
 
-    time.sleep(5)  # 간격10초 설정
+    time.sleep(8)  # 간격8초 설정
 
 #-----------------------------------------------------------#
 ##drama_episode_list에 있는 회차수를 엑셀에 저장
