@@ -1,3 +1,5 @@
+#필요 라이브러리 임포트
+
 import openpyxl
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -6,14 +8,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-# 웹 드라이버 초기화
+# 웹 드라이버 초기화 - 본인 버전에선 Chrome뒤에 ()를 공란으로 두어야 실행이 되는 것을 확인함
 browser = webdriver.Chrome()
 
 # -----------------------------------------------------------#
 # 드라마 제목 리스트
 
 # 엑셀 파일 불러오기
-read_xlsx = load_workbook('capstone_drama_01.xlsx')
+read_xlsx = load_workbook('drama_01.xlsx')
 read_sheet = read_xlsx.active
 
 # 엑셀에서 드라마 제목 데이터 추출
@@ -33,7 +35,7 @@ drama_storyline_list = []
 for drama_name in drama_names:
     drama_search = drama_name
 
-    # 네이버 검색 페이지로 이동
+    # 네이버 '한국드라마+드라마제목' 검색한 결과창으로 이동
     browser.get(f"https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%ED%95%9C%EA%B5%AD%EB%93%9C%EB%9D%BC%EB%A7%88+{drama_search}")
 
     # "펼쳐보기" 버튼이 클릭 가능할 때까지 대기
@@ -51,7 +53,7 @@ for drama_name in drama_names:
     except:
         print("Error clicking the '펼쳐보기' button")
 
-    # 현재 페이지 HTML을 가져와 BeautifulSoup으로 파싱
+    # 현재 페이지 HTML을 가져와 BeautifulSoup으로 파싱, 즉, 펼쳐보기까지 모두 된 html문서 불러옴
     html = browser.page_source
     soup = BeautifulSoup(html, 'html.parser')
 
@@ -72,12 +74,12 @@ for drama_name in drama_names:
 # drama_episode_list에 있는 줄거리를 기존 엑셀에 저장
 
 # 기존 엑셀의 F열에 3행부터 기입
-column_to_update = 'H'
-start_row = 2
+column_to_update = 'G'
+start_row = 3
 
 # 엑셀에 줄거리 추가
 for index, value in enumerate(drama_storyline_list):
     read_sheet[f'{column_to_update}{start_row + index}'] = value
 
 # 변경된 내용을 엑셀 파일에 저장
-read_xlsx.save('capstone_drama_01.xlsx')
+read_xlsx.save('drama_02.xlsx')
