@@ -142,6 +142,7 @@
 
 3. __최종결과물__
    * 최종 데이터셋
+     https://github.com/YoniKim0319/P4DS/issues/5#issue-2048170374
    * 워드클라우드
 
 <br>
